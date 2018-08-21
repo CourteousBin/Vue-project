@@ -1,0 +1,23 @@
+{
+	"status":0,
+	"message":[
+		{
+			"id":52,
+			"title":"测试数据-title",
+			"img_url":"./img/banner1.jpg",
+			"zhaiyao":"测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao."
+		},
+		{
+			"id":53,
+			"title":"测试数据-title",
+			"img_url":"./img/banner2.jpg",
+			"zhaiyao":"测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao."
+		},
+		{
+			"id":54,
+			"title":"测试数据-title",
+			"img_url":"./img/banner3.jpg",
+			"zhaiyao":"测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao.测试数据-zhaiyao."
+		}
+	]
+}

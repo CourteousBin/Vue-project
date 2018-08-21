@@ -1,0 +1,8 @@
+{
+	"status":0,
+	"message":[
+		{"url":"","img":"./img/banner1.jpg"},
+		{"url":"","img":"./img/banner2.jpg"},
+		{"url":"","img":"./img/banner3.jpg"},
+	]
+}
