@@ -2,7 +2,9 @@
     <div>
             <!-- 头部内容 -->
             <mt-header title="信息管理系统"></mt-header>
-            <router-view></router-view>
+            <transition name="router" mode="out-in">
+                <router-view></router-view>
+            </transition>
             <!-- 底部内容 -->
             <nav class="mui-bar mui-bar-tab">
             <router-link class="mui-tab-item" :to="{name:'home'}">
@@ -46,5 +48,10 @@
     }
 </script>
 <style scoped>
-
+.router-enter-active,.router-leave-active {
+    transition: opacity .5s;
+}
+.router-enter,.router-leave-to{
+    opacity: 0;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="tmpl">
-        <nav-bar title="新闻详情"></nav-bar>
+        <nav-bar :title="title"></nav-bar>
         <div class="news-title">
             <p v-text="newsDetail.title"></p>
             <div>
@@ -16,7 +16,8 @@
     export default {
         data(){
             return {
-                newsDetail:{}
+                newsDetail:{},
+                title:'',
             }
         },
         methods:{
@@ -35,6 +36,20 @@
                 console.log(err)
             })
             
+        },
+        beforeRouteEnter(to,from,next){
+            console.log(from);
+            let myTile = '';
+            if(from.name === 'news.list'){
+                // 新闻
+                myTile = '新闻详情';
+            }else if(from.name === 'goods.detail'){
+                // 商品详情
+                myTile = '图文介绍'
+            }
+            next(vm=>{
+                vm.title = myTile;
+            })
         }
     }
 </script>

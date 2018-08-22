@@ -66,6 +66,7 @@ let router = new VueRouter({
         {name:'goods.list',path:'/goods/list',component:GoodsList},
         {name:'goods.detail',path:'/goods/detail',component:GoodsDetail},
         {name:'goods.comment',path:'/goods/comment',component:GoodsComment},
+        {name:'goods.pictureInfo',path:'/goods/pictureinfo',components:NewsDetail}
     ]
 })
 

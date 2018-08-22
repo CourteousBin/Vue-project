@@ -34,7 +34,7 @@
         <div class="product-info">
             <ul>
                 <li>
-                    <mt-button type="primary" size="large" plain>图文介绍</mt-button>
+                    <mt-button type="primary" size="large" plain @click="showPicInfo">图文介绍</mt-button>
                 </li>
                 <li>
                     <mt-button type="danger" size="large" plain @click="showProdComment">商品评论</mt-button>
@@ -104,8 +104,16 @@
                 // 编程导航
                 this.$router.push({
                     name:'goods.comment',
-                    query:{'id':id}
+                    query:{id}
                 })
+            },
+            showPicInfo(){
+                let id = this.$route.query.id;
+                //编程导航
+                this.$router.push({
+                    name:'goods.pictureInfo',
+                    query:{ id } //路由参数id
+                });
             }
         }
  
