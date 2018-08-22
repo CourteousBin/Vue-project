@@ -1,0 +1,14 @@
+{
+	"status":0,
+	"message":[
+		{
+			"add_time":"2015-01-19T17:00:58.000Z",
+			"goods_no":"SD123456789",
+			"id":88,
+			"sell_price":2195,
+			"market_price":2499,
+			"stock_quantity":60,
+			"title":"华为手机"
+		}
+	]
+}

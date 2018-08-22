@@ -20,6 +20,20 @@ import Axios from 'axios';
 
 Vue.prototype.$ajax = Axios;
 Axios.defaults.baseURL = '/api';
+Axios.interceptors.request.use(function(config){
+    // 常规操作
+    // 显示loading
+    Mint.Indicator.open({
+        text: '加载中...',
+        spinnerType: 'fading-circle'
+    })
+    return config;
+});
+Axios.interceptors.response.use(function(config){
+    // 获取到响应中的data,进行加工
+    Mint.Indicator.close();
+    return config;
+});
 
 
 //引入自己的vue文件 开始  
@@ -31,6 +45,10 @@ import Search from './components/search/search.vue';
 import Newslist from './components/news/newslist.vue';
 import NewsDetail from './components/news/newsdetail.vue';
 import PhotoShare from './components/photo/photoshare.vue';
+import PhotoDetail from './components/photo/photodetail.vue';
+import GoodsList from './components/goods/goodslist.vue';
+import GoodsDetail from './components/goods/goodsdetail.vue';
+import GoodsComment from './components/goods/goodscomment.vue';
 
 let router = new VueRouter({
 	linkActiveClass:'mui-active',
@@ -43,7 +61,11 @@ let router = new VueRouter({
         { name: 'search', path: '/search', component: Search },
         {name:'news.list',path:'/news/list',component:Newslist},
         {name:'news.detail',path:'/news/detail',component:NewsDetail},
-        {name:'photo.share',path:'/photo/share',component:PhotoShare}
+        {name:'photo.share',path:'/photo/share',component:PhotoShare},
+        {name:'photo.detail',path:'/photo/detail/:id',component:PhotoDetail},
+        {name:'goods.list',path:'/goods/list',component:GoodsList},
+        {name:'goods.detail',path:'/goods/detail',component:GoodsDetail},
+        {name:'goods.comment',path:'/goods/comment',component:GoodsComment},
     ]
 })
 
@@ -57,6 +79,16 @@ Vue.filter('converDate',function(value){
 // 全局组件
 import NavBar from './components/common/navBar.vue';
 Vue.component('navBar',NavBar);
+
+import Comment from './components/common/comment.vue';
+Vue.component('comment',Comment);
+
+import MySwipe from './components/common/mySwiper.vue';
+Vue.component('mySwipe',MySwipe); // my-swipe
+
+// 预览插件 vue-preview
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview);
 
 //创建vue实例
 new Vue({

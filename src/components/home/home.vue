@@ -1,9 +1,7 @@
 <template>
     <div>
         <!-- home也轮播图 -->
-        <mt-swipe :auto="4000">
-          <mt-swipe-item v-for="(img,index) in imgs" :key="index"><a :href="img.url"><img :src="/api/+img.img"></a></mt-swipe-item>
-        </mt-swipe>
+        <my-swipe :url="lunboUrl"></my-swipe>
         <!-- home九宫格 -->
         <div class="mui-content">
                 <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -20,9 +18,13 @@
                             <div class="mui-media-body">图文分享</div>
                         </router-link>
                         </li>
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                        <router-link  :to="{name:'goods.list'}">
                             <span class="mui-icon mui-icon-chatbubble"></span>
-                            <div class="mui-media-body">商品展示</div></a></li>
+                            <div class="mui-media-body">商品展示</div>
+                        </router-link>
+                    </li>
+
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                             <span class="mui-icon mui-icon-location"></span>
                             <div class="mui-media-body">留言反馈</div></a></li>
@@ -41,16 +43,10 @@
         data(){
             return {
                 imgs:[],//轮播图列表
+                lunboUrl:'getlunbo.json'
             }
         },
         created(){
-            //发起请求
-            this.$ajax.get('getlunbo.json')
-            .then(res=>{
-                var obj = eval('('+ res.data +')');
-                console.log(obj)
-                this.imgs = obj.message;
-            })
         }
     }
 </script>

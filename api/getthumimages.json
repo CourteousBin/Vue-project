@@ -1,0 +1,11 @@
+{
+	"status":0,
+	"message":[
+		{"url":"","src":"./api/img/banner1.jpg"},
+		{"url":"","src":"./api/img/banner2.jpg"},
+		{"url":"","src":"./api/img/banner3.jpg"},
+		{"url":"","src":"./api/img/news1.jpg"},
+		{"url":"","src":"./api/img/news2.jpg"},
+		{"url":"","src":"./api/img/news3.jpg"}
+	]
+}

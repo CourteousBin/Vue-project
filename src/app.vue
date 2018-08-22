@@ -14,7 +14,7 @@
                 <span class="mui-tab-label">会员</span>
             </router-link>
             <router-link class="mui-tab-item" :to="{name:'shopcart'}">
-                <span class="mui-icon icon-gouwucheman"><span class="mui-badge">9</span></span>
+                <span class="mui-icon icon-gouwucheman"><span class="mui-badge">{{pickNum}}</span></span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
             <router-link class="mui-tab-item" :to="{name:'search'}">
@@ -25,13 +25,23 @@
     </div>
 </template>
 <script>
+    import connect from './components/common/connect.js';
+    import prodTools from './components/common/prodTools.js'; 
+    // 先创建父组件
     export default {
         data(){
             return {
+                pickNum:prodTools.getTotalCount()
             }
         },
         methods:{
            
+        },
+        created(){
+            connect.$on('addShopcart',num=>{
+                console.log('接受到了');
+                this.pickNum = this.pickNum+num;
+            })
         }
     }
 </script>

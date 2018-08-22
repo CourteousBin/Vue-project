@@ -33,10 +33,18 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-                options: {
-                    presets: ['es2015'], //关键字
-                    plugins: ['transform-runtime'], //函数
-                }
+                // options: {
+                //     presets: ['es2015'], //关键字
+                //     plugins: ['transform-runtime'], //函数
+                // }
+            },
+            {
+                test:/vue-preview.src.*?js$/,
+                loader:'babel-loader',
+                // options: {
+                //     presets: ['es2015'], //关键字
+                //     plugins: ['transform-runtime'], //函数
+                // }
             },
             {
                 test: /\.vue$/,
