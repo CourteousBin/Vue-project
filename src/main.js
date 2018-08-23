@@ -36,19 +36,38 @@ Axios.interceptors.response.use(function(config){
 });
 
 
-//引入自己的vue文件 开始  
+// 主程序不能懒加载
 import App from './app.vue';
-import Home from './components/home/home.vue';
-import Member from './components/member/member.vue';
-import Shopcar from './components/shopcar/shopcar.vue';
-import Search from './components/search/search.vue';
-import Newslist from './components/news/newslist.vue';
-import NewsDetail from './components/news/newsdetail.vue';
-import PhotoShare from './components/photo/photoshare.vue';
-import PhotoDetail from './components/photo/photodetail.vue';
-import GoodsList from './components/goods/goodslist.vue';
-import GoodsDetail from './components/goods/goodsdetail.vue';
-import GoodsComment from './components/goods/goodscomment.vue';
+
+// 懒加载
+// 官方例子
+// const Foo = resole => require(['./Foo.vue'],resolve);
+
+const Home = r=> require(['./components/home/home.vue'],r);
+const Member = r=> require(['./components/member/member.vue'],r);
+const Shopcar = r=> require(['./components/shopcar/shopcar.vue'],r);
+const Search = r=> require(['./components/search/search.vue'],r);
+const Newslist = r=> require(['./components/news/newslist.vue'],r);
+const NewsDetail = r=> require(['./components/news/newsdetail.vue'],r);
+const PhotoShare = r=> require(['./components/photo/photoshare.vue'],r);
+const PhotoDetail = r=> require(['./components/photo/photodetail.vue'],r);
+const GoodsList = r=> require(['./components/goods/goodslist.vue'],r);
+const GoodsDetail = r=> require(['./components/goods/goodsdetail.vue'],r);
+const GoodsComment = r=> require(['./components/goods/goodscomment.vue'],r);
+
+//引入自己的vue文件 开始  
+// import App from './app.vue';
+// import Home from './components/home/home.vue';
+// import Member from './components/member/member.vue';
+// import Shopcar from './components/shopcar/shopcar.vue';
+// import Search from './components/search/search.vue';
+// import Newslist from './components/news/newslist.vue';
+// import NewsDetail from './components/news/newsdetail.vue';
+// import PhotoShare from './components/photo/photoshare.vue';
+// import PhotoDetail from './components/photo/photodetail.vue';
+// import GoodsList from './components/goods/goodslist.vue';
+// import GoodsDetail from './components/goods/goodsdetail.vue';
+// import GoodsComment from './components/goods/goodscomment.vue';
 
 let router = new VueRouter({
 	linkActiveClass:'mui-active',
