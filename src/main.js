@@ -110,9 +110,14 @@ Vue.component('mySwipe',MySwipe); // my-swipe
 import VuePreview from 'vue-preview';
 Vue.use(VuePreview);
 
+
+// vuex
+import store from './store.js';
+
 //创建vue实例
 new Vue({
     el: '#app',
     router,
+    store,
     render: c => c(App)
 })
